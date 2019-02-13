@@ -1,0 +1,31 @@
+{
+  "name": "mongodb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node ./lib/server.ts",
+    "start": " tsc && nodemon ./dist/server.js",
+    "prod": "npm run build && npm run start",
+    "watch-node": "set APP_ENV=.env.dev&&nodemon dist/server.js",
+    "watch-ts": "tsc -w",
+    "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run watch-node\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^4.16.1",
+    "bcrypt": "^3.0.4",
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.4.0",
+    "mongoose": "^5.4.8",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.18.9",
+    "path": "^0.12.7"
+  }
+}
